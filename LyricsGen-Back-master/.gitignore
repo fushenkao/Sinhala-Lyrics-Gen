@@ -1,0 +1,15 @@
+.DS_Store
+model/.DS_Store
+.idea/
+__pycache__/
+logs/
+_travis.yml
+*.pyc
+rapLyrics_word_2/
+old/
+weights/RapLyrics_word2_01_config.json
+weights/RapLyrics_word2_01_vocab.json
+weights/RapLyrics_word2_01_weights.hdf5
+temp.txt
+/weights/Trainings/*
+

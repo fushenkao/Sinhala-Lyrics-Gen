@@ -1,0 +1,1 @@
+{"rnn_layers": 2, "rnn_size": 128, "rnn_bidirectional": true, "max_length": 10, "max_words": 41000, "dim_embeddings": 300, "word_level": true, "single_text": false, "name": "RapLyrics_word2_01", "train_size": 1.0, "max_gen_length": 50}
