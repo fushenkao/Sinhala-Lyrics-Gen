@@ -1,31 +1,13 @@
-# RapLyrics-Back
-Part of the [raplyrics.eu](https://www.raplyrics.eu/?utm_source=github.com&utm_medium=github-readme&utm_campaign=github-back) project: generate powerful AI-powered rap lyrics. 
-
-<p align="center"> 
-<a href="https://raplyrics.eu">
-
-![lyrics generation with curl](/doc/curl.gif)
-</a>
-</p>
-
-This repository contains: 
-- a hand-curated, human-cleaned rap lyrics dataset 
-- the implementation of a generative rnn model (based on [minimaxir](https://github.com/minimaxir/textgenrnn) work)  
-- a custom generative function and a serving implementation   
+# SinhalaLyrics-Back
 
 ## Getting started  
 ### Setup
-Get the repo. Clone from GitHub:  
-    
-    $ git clone https://github.com/cyrilou242/RapLyrics-Back  
-    
+
 Setup a virtualenv and install the required libraries.
 
 **Note**: Make sure you have a `python --version` == `python3.6` otherwise some library (especially `tensorflow` may not 
 be available or behave as expected)
-    
-    $ cd RapLyrics-Back  
-    $ mkvirtualenv --python `which python3.6` -r requirements.txt RapLyrics_Back  
+
     
 ###  Train the model
 The training is based on [minimaxir's textgenrnn](https://github.com/minimaxir/textgenrnn) with small pre-processing tweaks.
@@ -36,7 +18,6 @@ The development of this library is still active, you may want to use it instead 
     
 [train.py](train.py) contains the parameters and the path of the training dataset.  
 Have a look at it and launch your own training.
-Don't change anything to train from the [rap lyric dataset](datasets/rapus_generalist_augmented.txt) provided. This will create a word model and a char model.  
 
 **Parameters available**:   
 *new_model*: True to create a new model or False to train based on an existing one.  
@@ -72,11 +53,8 @@ To test the serving, launch the development flask server:
     
 Make a request to the server in a different terminal:
   
-    $ curl '127.0.0.1:5000/apiUS' -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "input=low life"  
+    $ curl '127.0.0.1:5000/apiUS' -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "input=ඔබට මම"  
   
-    {"output":"low life down the whip\nand i don't mean it 'cause i never had a death\ni guess i have a story of the bitches change\nfor the life\nfor the life that i know will you get through\n'cause i don't give a fuck i got the way before i started inhale"}
+    {"output":"ඔබට මම ආදරය පෑ දවසේ\n ඔබ උන්නු තැන හදේ තාමත් හරිම උණුසුමයි"}
 For further serving in production, use a production WSGI server. We recommend gunicorn.    
 
-
-# Next steps:
-- Further researches and testing with character level  models. Seems very promising.
