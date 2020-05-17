@@ -56,5 +56,4 @@ Make a request to the server in a different terminal:
     $ curl '127.0.0.1:5000/apiUS' -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "input=ඔබට මම"  
   
     {"output":"ඔබට මම ආදරය පෑ දවසේ\n ඔබ උන්නු තැන හදේ තාමත් හරිම උණුසුමයි"}
-For further serving in production, use a production WSGI server. We recommend gunicorn.    
 
